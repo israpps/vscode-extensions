@@ -1,0 +1,25 @@
+{
+  "name": "ps2-irx-imports",
+  "displayName": "ps2_irx_imports",
+  "description": "Sintax highlight for PlayStation2 IRX modules import lists",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.77.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "irx_imports",
+      "aliases": ["IRX Imports", "irx_imports"],
+      "extensions": ["imports.lst"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "irx_imports",
+      "scopeName": "irx_import",
+      "path": "./syntaxes/irx_imports.tmLanguage.json"
+    }]
+  }
+}

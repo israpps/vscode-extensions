@@ -1,0 +1,85 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "IRX Imports",
+	"foldingStartMarker": "^[a-zA-Z_][a-zA-Z0-9_]*_IMPORTS_start$",
+	"foldingStopMarker": "^[a-zA-Z_][a-zA-Z0-9_]*_IMPORTS_end$",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#preprocessor"
+		}
+	],
+	"repository": {
+		"preprocessor": {
+			"patterns": [
+				{
+					"name": "meta.preprocessor",
+					"match": "^#(if\\s|ifdef\\s|ifndef\\s|define [a-zA-Z_][a-zA-Z0-9_]*|include [<\"].*[>\"])"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [{
+				"name": "comment.block.irx_imports",
+				"begin": "/\\*",
+				"end": "\\*/",
+				"beginCaptures": {
+				  "0": { "name": "comment.block.irx_imports" }
+				},
+				"endCaptures": {
+				  "0": { "name": "comment.block.irx_imports" }
+				}
+			},{
+				"name": "comment.preprocessor.irx_imports",
+				"begin": "#if 0",
+				"end": "#endif",
+				"beginCaptures": {
+				  "0": { "name": "comment.preprocessor.irx_imports" }
+				},
+				"endCaptures": {
+				  "0": { "name": "comment.preprocessor.irx_imports" }
+				}
+			},
+			{
+				"name": "comment.line.irx_imports",
+				"match": "//.*$"
+			}
+		
+		]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.irx_imports",
+				"match": "\\b(.*_IMPORTS_(start|end))\\b"
+			},
+			{
+				"name": "keyword.operators.irx_imports",
+				"match": "\\bI_.*\\b"
+			}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.irx_imports",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.irx_imports",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "irx_import"
+}
