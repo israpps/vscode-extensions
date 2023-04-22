@@ -19,7 +19,7 @@
         ["\"", "\""],
         ["/*", "*/"],
         ["'", "'"],
-        ["_IMPORTS_start", "_IMPORTS_end"]  
+        ["_IMPORTS_start", "\n\n_IMPORTS_end"]  
     ],
     // symbols that can be used to surround a selection
     "surroundingPairs": [
