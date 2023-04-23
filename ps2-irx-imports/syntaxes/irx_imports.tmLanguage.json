@@ -8,13 +8,16 @@
 			"include": "#comments"
 		},
 		{
+			"include": "#operators"
+		},
+		{
 			"include": "#keywords"
 		},
 		{
 			"include": "#strings"
 		},
 		{
-			"include": "#operators"
+			"include": "#function"
 		},
 		{
 			"include": "#preprocessor"
@@ -25,7 +28,7 @@
 			"patterns": [
 				{
 					"name": "meta.preprocessor",
-					"match": "^#(if\\s|ifdef\\s|ifndef\\s|define [a-zA-Z_][a-zA-Z0-9_]*|include [<\"].*[>\"])"
+					"match": "^#(endif|if\\s.*|ifdef\\s.*|ifndef\\s.*|define [a-zA-Z_][a-zA-Z0-9_]*|include [<\"].*[>\"])"
 				}
 			]
 		},
@@ -40,7 +43,8 @@
 				"endCaptures": {
 				  "0": { "name": "comment.block.irx_imports" }
 				}
-			},{
+			},
+			{
 				"name": "comment.preprocessor.irx_imports",
 				"begin": "#if 0",
 				"end": "#endif",
@@ -62,12 +66,14 @@
 			"patterns": [{
 				"name": "keyword.control.irx_imports",
 				"match": "\\b(.*_IMPORTS_(start|end))\\b"
-			},
-			{
-				"name": "keyword.operators.irx_imports",
-				"match": "\\bI_.*\\b"
 			}
 			]
+		},
+		"function": {
+			"patterns": [{
+				"name": "entity.name.function.irx_imports",
+				"match": "\\bI_.*\\b"
+			}]
 		},
 		"strings": {
 			"name": "string.quoted.double.irx_imports",
