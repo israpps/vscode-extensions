@@ -1,0 +1,25 @@
+{
+  "name": "cht",
+  "displayName": "CHT",
+  "description": "OpenPS2Loader Cheat file sintax highlight",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.81.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "cht",
+      "aliases": ["OPL Cheat File", "cht"],
+      "extensions": [".cht"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "cht",
+      "scopeName": "source.cht",
+      "path": "./syntaxes/cht.tmLanguage.json"
+    }]
+  }
+}

@@ -1,0 +1,63 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "OPL Cheat File",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.cht",
+				"match": "\\b(9[0-9a-fA-F]{7} [0-9a-fA-F]{8})\\b"
+			},{
+				"name": "constant.language",
+				"match": "\\b(Mastercode)\\b"
+			}
+		]},
+		"strings": {
+			"name": "string.quoted.double.cht",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.cht",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+			{
+				"name": "comment.block.documentation.cht",
+				"match": "(//\\[.*\\]$|#\\[.*\\]$)"
+			},
+			{
+				"name": "comment.line.cht",
+				"match": "(//.*$|#.*$)"
+			}
+		
+		]
+		},
+		"numbers": {
+			"patterns": [
+			{
+				"name": "constant.numeric.cht",
+				"match": "([0-8a-fA-F]{8} [0-9a-fA-F]{8})"
+			}
+		
+		]
+		}
+	},
+	"scopeName": "source.cht"
+}
