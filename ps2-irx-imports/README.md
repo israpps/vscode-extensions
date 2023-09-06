@@ -7,8 +7,6 @@ sintax highlight extension for PlayStation 2 Import lists for IRX modules (mipsr
 > Tip: to complete the experience, I recommend changing the sintax highlight of `exports.tab` (if your project has one) to C
 
 ## Known Issues
-
-module import start and end can't be folded (regex is not working?)
-
+You tell me ;)
 
 **Enjoy!**
