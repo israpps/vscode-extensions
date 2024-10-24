@@ -1,0 +1,32 @@
+name: pack and release
+on:
+  push:
+  pull_request:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: ps2dev/ps2dev:latest
+    steps:
+      - name: Install dependencies
+        run: |
+          apk add zip git
+
+      - uses: actions/checkout@v4
+      - run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git fetch --prune --unshallow
+
+      - name: Compile
+        run: |
+          for fold in cht ps2-irx-imports;do  zip -r $fold.zip $fold/; done
+
+      - name: rel
+        if: github.ref == 'refs/heads/main'
+        uses: mathieucarbou/marvinpinto-action-automatic-releases@latest
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: true
+          automatic_release_tag: "latest"
+          title: "nightly"
+          files: |
+            *.zip

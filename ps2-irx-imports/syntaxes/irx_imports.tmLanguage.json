@@ -5,9 +5,6 @@
 	"foldingStopMarker": "^[a-zA-Z_][a-zA-Z0-9_]*_IMPORTS_end$",
 	"patterns": [
 		{
-			"include": "source.c"
-		},
-		{
 			"include": "#comments"
 		},
 		{
@@ -23,7 +20,7 @@
 			"include": "#function"
 		},
 		{
-			"include": "#preprocessor"
+			"include": "source.cpp"
 		}
 	],
 	"repository": {
@@ -60,7 +57,7 @@
 		"function": {
 			"patterns": [{
 				"name": "entity.name.function.irx_imports",
-				"match": "\\bI_.*\\b"
+				"match": "I_.*"
 			}]
 		},
 		"strings": {
